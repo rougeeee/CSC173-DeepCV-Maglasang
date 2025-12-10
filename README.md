@@ -8,8 +8,8 @@
 
 ## Abstract
 
-- This project presents a real-time deep computer vision system for detecting whether individuals are wearing face masks, addressing the continued demand for automated health-safety monitoring in public spaces across Mindanao. The system leverages transfer learning using MobileNetV2 and a custom face-mask dataset composed of over 12,000 annotated images sourced from public datasets and curated samples. Data augmentation techniques were applied to improve generalization under real-world conditions such as occlusion, variable lighting, and camera noise. Using PyTorch, the model achieved a validation accuracy of 97.4% and an inference speed of 18 ms per frame, making it suitable for real-time deployment on standard laptops or edge devices. The final application integrates a webcam-based detection module with bounding boxes and confidence scores. This project contributes an efficient, lightweight model and a clean, deployable pipeline that can be extended to campus monitoring, small businesses, or embedded IoT systems in Iligan and nearby areas.
-
+- This project presents a real-time deep computer vision system for detecting whether individuals are wearing face masks, addressing the continued demand for automated health-safety monitoring in public spaces across Mindanao.
+  
 ## Table of Contents
 
 Introduction
