@@ -5,49 +5,73 @@
 
 **Repository:** https://github.com/rougeeee/CSC173-DeepCV-Maglasang/
 
-**Commits Since Proposal:** [X commits] | **Last Commit:** [Date]
+**Commits Since Proposal:** [5 commits] | **Last Commit:** [12/23/2025]
 
 ## 📊 Current Status
 | Milestone | Status | Notes |
 |-----------|--------|-------|
-| Dataset Preparation | ✅ Completed | [X] images downloaded/preprocessed |
-| Initial Training | ✅ In Progress | [X] epochs completed |
-| Baseline Evaluation | ⏳ Pending | Training ongoing |
-| Model Fine-tuning | ⏳ Not Started | Planned for tomorrow |
+| Dataset Acquisition & Preparation |	✅ Completed |	Kaggle dataset fully processed |
+| Data Preprocessing & Augmentation |	✅ Completed |	Resize, normalization, augmentation |
+| Model Training |	✅ Completed |	MobileNetV2 fully trained |
+| Baseline & Final Evaluation	| ✅ Completed	| Metrics finalized |
+| Model Fine-tuning	| ✅ Completed	| Optimized learning rate & augmentations |
+| Real-time Inference |	✅ Completed	| Webcam-based detection implemented |
+| Documentation & Repository	| ✅ Completed	| README, notebook, and report finalized |
 
-## 1. Dataset Progress
-- **Total images:** [e.g., 4,200]
-- **Train/Val/Test split:** [e.g., 70%/15%/15% or 2,940/630/630]
-- **Classes implemented:** [e.g., 6 classes: plastic, metal, paper, glass, organic, other]
-- **Preprocessing applied:** Resize(640), normalization, augmentation (flip, rotate, brightness)
+## 1. Dataset Summary
+**Dataset Source:** Kaggle – Face Mask Detection Dataset
 
-**Sample data preview:**
-![Dataset Sample](images/dataset_sample.png)
+**Total Images:** ~12,000
 
-## 2. Training Progress
+**Classes:**
+  - with_mask
 
-**Training Curves (so far)**
-![Loss Curve](images/loss_curve.png)
-![mAP Curve](images/map_curve.png)
+  - without_mask
 
-**Current Metrics:**
-| Metric | Train | Val |
-|--------|-------|-----|
-| Loss | [0.45] | [0.62] |
-| mAP@0.5 | [78%] | [72%] |
-| Precision | [0.81] | [0.75] |
-| Recall | [0.73] | [0.68] |
+**Data Split:**
 
-## 3. Challenges Encountered & Solutions
-| Issue | Status | Resolution |
-|-------|--------|------------|
-| CUDA out of memory | ✅ Fixed | Reduced batch_size from 32→16 |
-| Class imbalance | ⏳ Ongoing | Added class weights to loss function |
-| Slow validation | ⏳ Planned | Implement early stopping |
+  - Training: 70%
 
-## 4. Next Steps (Before Final Submission)
-- [ ] Complete training (50 more epochs)
-- [ ] Hyperparameter tuning (learning rate, augmentations)
-- [ ] Baseline comparison (vs. original pre-trained model)
-- [ ] Record 5-min demo video
-- [ ] Write complete README.md with results
+  - Validation: 15%
+
+  - Testing: 15%
+
+# Preprocessing Techniques
+
+- Image resizing to 224 × 224
+- Random horizontal flipping
+- Color jitter and rotation
+- ImageNet normalization
+
+The dataset was randomly split using PyTorch’s random_split to ensure unbiased evaluation.
+
+## 2. Model & Training Summary
+
+<img width="1242" height="487" alt="image" src="https://github.com/user-attachments/assets/a7abe2b5-1146-4c0d-9de6-90b93e438b8a" />
+
+- Architecture: MobileNetV2 (pretrained on ImageNet)
+- Framework: PyTorch
+- Loss Function: Cross-Entropy Loss
+- Optimizer: Adam
+- Batch Size: 32
+- Epochs: 10
+
+Training converged smoothly with stable validation performance and no significant overfitting observed.
+
+## 3. Final Evaluation Results
+| Metric	| Training	| Validation	| Test |
+|---------|-----------|-------------|------|
+| Accuracy	| ~97%	| ~95%	| ~94% |
+| Precision	| ~0.96	| ~0.94	| ~0.93 |
+| Recall	| ~0.95	| ~0.93	| ~0.92 |
+| Inference Time	| — |	—	| ~15 ms (CPU) |
+
+## 4. Challenges & Resolutions
+| Challenge	| Resolution |
+|-----------|------------|
+| Dataset lacked predefined splits	| Applied controlled random splitting |
+| Risk of overfitting	| Used data augmentation & validation monitoring |
+| Low-light image misclassification	| Improved via augmentation |
+| Real-time speed constraints	| Selected MobileNetV2 for efficiency |
+
+All identified issues were successfully addressed during development.
