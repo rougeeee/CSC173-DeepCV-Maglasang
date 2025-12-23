@@ -5,7 +5,7 @@
 
 **Repository:** https://github.com/rougeeee/CSC173-DeepCV-Maglasang/
 
-**Commits Since Proposal:** [5 commits] | **Last Commit:** [12/23/2025]
+**Commits Since Proposal:** [6 commits] | **Last Commit:** [12/23/2025]
 
 ## 📊 Current Status
 | Milestone | Status | Notes |
